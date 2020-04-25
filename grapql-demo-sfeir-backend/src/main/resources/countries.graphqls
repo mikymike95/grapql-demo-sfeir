@@ -1,0 +1,28 @@
+# Query to retrieve a known virus by its name
+type Query {
+    country(name: String): Country
+    countries: [Country]!
+    countriesInfectedBy(infection: String!): [Country]!
+}
+
+# Mutation to add a territory
+type Mutation {
+    registerCountry(name: String!, longitude: Float!, latitude: Float!) : Country
+}
+
+type Country {
+    id: ID
+    name: String!
+    location: Location!
+    infections: [String]
+}
+
+type Location {
+    longitude: Float!
+    latitude: Float!
+}
+
+type City {
+    name: String!
+    country: String!
+}

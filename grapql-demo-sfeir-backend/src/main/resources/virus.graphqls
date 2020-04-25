@@ -1,0 +1,15 @@
+extend type Query {
+    virus(name: String): Virus
+    allVirus: [Virus]!
+}
+
+extend type Mutation {
+    registerVirus(name: String!, origin: String, vaccine: String): Virus
+}
+
+type Virus {
+    id: ID
+    name: String!
+    origin: String
+    vaccine: String
+}

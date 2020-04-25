@@ -1,0 +1,19 @@
+extend type Query {
+    patient(name: String): Patient
+    patients: [Patient]!
+    patientsWithFullName(firstName: String!, lastName: String!): Patient
+    patientsByCountry(territory: String!): [Patient]!
+    patientsInfectedBy(infection: String!): [Patient]!
+    patientsByCountryInfectedBy(country: String!, infection: String!): [Patient]!
+}
+
+extend type Mutation {
+    registerPatient(firstName: String!, lastName: String!, city: String!, country: String! infection: String!): Patient
+}
+
+type Patient {
+    firstName: String!
+    lastName: String!
+    address: City!
+    infection: String!
+}
