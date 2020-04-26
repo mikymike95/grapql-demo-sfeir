@@ -1,13 +1,9 @@
 package org.sfeir.pandemik.infrastructure.configuration;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import graphql.GraphQL;
 import graphql.schema.GraphQLSchema;
 import graphql.schema.idl.*;
-import org.sfeir.pandemik.application.graphql.GraphQLDataFetcher;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.util.ResourceUtils;
 
 import javax.annotation.PostConstruct;
@@ -24,6 +20,7 @@ public class GraphqlConfiguration {
 
     @PostConstruct
     public void init() throws IOException {
+        // Scema file
         File schemaFile = ResourceUtils.getFile("classpath:countries.graphqls");
         this.graphQL = GraphQL.newGraphQL(buildSchema(schemaFile)).build();
     }

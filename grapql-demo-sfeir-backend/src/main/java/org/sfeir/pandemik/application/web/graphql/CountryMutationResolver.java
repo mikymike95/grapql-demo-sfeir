@@ -1,4 +1,4 @@
-package org.sfeir.pandemik.application.web.controller;
+package org.sfeir.pandemik.application.web.graphql;
 
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import lombok.RequiredArgsConstructor;

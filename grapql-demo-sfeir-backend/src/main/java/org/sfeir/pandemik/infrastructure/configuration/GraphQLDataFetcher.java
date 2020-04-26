@@ -1,4 +1,4 @@
-package org.sfeir.pandemik.application.graphql;
+package org.sfeir.pandemik.infrastructure.configuration;
 
 import graphql.schema.DataFetcher;
 import lombok.RequiredArgsConstructor;
